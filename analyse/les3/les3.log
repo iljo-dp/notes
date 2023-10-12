@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.10.11)  12 OCT 2023 08:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.10.11)  12 OCT 2023 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -180,23 +180,29 @@ Package pdftex.def Info: boat.png  used on input line 56.
 (pdftex.def)             Requested size: 93.94957pt x 184.5642pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./boat.png>] [2] (./les3.a
-ux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./boat.png>]
+<tests.png, id=12, 1531.7225pt x 309.155pt>
+File: tests.png Graphic file (type png)
+<use tests.png>
+Package pdftex.def Info: tests.png  used on input line 72.
+(pdftex.def)             Requested size: 469.75502pt x 94.80867pt.
+ [2 <./Tests.png>]
+(./les3.aux) ) 
 Here is how much of TeX's memory you used:
- 2237 strings out of 476025
- 35267 string characters out of 5796531
+ 2244 strings out of 476025
+ 35361 string characters out of 5796531
  1853388 words of memory out of 5000000
- 22712 multiletter control sequences out of 15000+600000
+ 22718 multiletter control sequences out of 15000+600000
  514421 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,6n,62p,243b,222s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on les3.pdf (2 pages, 105871 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on les3.pdf (2 pages, 235917 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 31 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
