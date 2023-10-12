@@ -1,0 +1,584 @@
+CyberSEC HOGENT
+hoofdstuk 4.
+De kunst van het beschermen van geheimen.
+
+4.1 cryptografie
+Cryptologie: wetenschap maken en breken van geheime codes.
+cryptografie; manier om gegevens op te slaan en te verzenden. Zodat enkel de ontvager deze kan lezen.
+Moderene cryptografie is het gebruiken van algoritmes om data te beschermen.
+
+Berichten encrypteren/decrypteren
+Specifiek algoritme met aantal goed gedefinieerde stappen.
+Het opene van het bericht maakt het dus terug plain text. Dit kan door verrschillende methodes.
+
+Transpositie; eenvoudig voorbeeld waarbij de volgorde van de karakters gewijzigd zijn.
+
+Substitutie; waarbij karakters vervangen worden door andere karakters. Bruteforce, elke mogelijke combinatie afgaan, door te blijven proberen.
+
+One time pad; er wordt elke keer afzonderlijk een shift bepaald per letter. Dan krijg je een andere rotatie voor elke letter, dus onvoorspelbaarder. Alles heeft evenveel kans.
+Dus bijna ongmogelijk om te bruteforcen. want het is 26 * (aantal letters) waardoor je een enorm groot getal krijgt.
+
+Twee types algoritmes,
+
+---SYMETRISCH---
+Sleutelpaar = zelfde sleutels voor encrutperen en decrypteren.
+Verzendere en afzeder kennen de sleutel VOOR de communicatie.
+Het probleem is het overbrengen van de key. Dit kan dus gedaan worden
+
+---Asymmetrische algoritme---
+Sleutelpaar = verschillende sleutel voor encryptie en decryptie.
+1 sleutel is publiek, de andere prive.
+Daarom ook vaak term; publieke sleutelencryptie;
+Iedereen kan bericht encrypteren met publiek, maar enkel de ontvanger dan decrypteren met privé.
+Kan om omgekeerd,
+Het is veel complexer en trager.
+Hoeft geen sleutel op voorhand uit te wisselen.
+Dit kan wel fout gaan als er een 3rde partij is die ook je sleutel behoud, Als het niet end to end is. Bv. facebook.
+
+
+Encrypt met publik, decrypt me privé.
+De ontvanger moet beide sleutels genereren, dus beide sleutels zijn van de ontvangers.
+De public key wordt dus gedeeld aan de verzender, die dus vrij mag encrypteren. Maar enkel met de privé key kan je het originele bericht terug krijgen.
+
+Private key versleuteling,
+DES, digital encryption standard.
+Eenvoudig, encrypteert 64 bits blokken met 56 bits sleutels.
+De pc's zijn veel te sterk om dit niet te kunnen encrypteren.
+
+3DES tripple 3DES
+3X des met verschillende sleutels, Sleutelsterkte: 3x56 - 168 bits in praktijk 112 bits afhankelijk van gekoze communicatie.
+
+IDEA International data encryption algorithm
+64-bits blokken met 128 bits sleutel.
+
+AES; advanced encryption standard.
+128-bits blokken; sleutel van 128 192 of 256.
+Goedgekeurd door NIST, gebruikt door Amerikaanse overheid.
+pgp = pretty good privacy
+
+Public key versluiteling,
+Assymmetrisch versluitelingsproces; verschillende sleutels voor encryptye.
+
+Public key versluiteling,
+RSA, river shamir adleman
+Gebruikt product van 2 heel grote priemgetallen, vaak voor browsers.
+
+Diffie-hellman;
+Gebruikt om geheime sleutels (sessionkeys) voor symmetrische alogoritme uit te wisselen. Vaak voor, ssl, tls, ssh en ipsec.
+
+Elgamal
+Amerikaanse overheidsstandaard voor digitale handtekening,
+gratis, geen patent.
+
+ECC Elliptic curve cryptography.
+Alternatief voor RSA: nulpunten van elliptische curven ipv. priemgetallen.
+VS: NSA gebruikt dit voor handtekeningen en uitwisselen sleutels.
+
+
+Bij digitaal handtekenen moet er een sleutelpaar zijn, prive en publiek.
+Het document moet worden versleuteld door de prive key, van de verzender. Die mogen ze zeker niet kwijt.
+Je kan de handtekening decrypteren door de publieke sleutel te gebruiken, die dus publiek verkrijgbaar is. En als er dus een match is, ben je zeker dat je het juiste hebt ontvangen.
+
+symmetrische
+Voordelen; Snel, verbruikt weinig recoursen kan gebruikt worden voor lang en kort.
+Nadelen; Sleutel moet op veilige manier gedeeld worden.
+
+Assymmetrisch
+Voordelen; Niet nodig om beide sleutels te delen, kan gebruikt worden voor encryptie en validatie
+Nadelen; gebruikt veel recources, enkel bruikbaar voor relatief korte berichten.
+Het duurt veel te lang om lange berichten te decrypteren.
+
+Daarom wordt Assymmetrisch gebruikt om de symmetrische key uit te wisselen.
+
+public = Assymmetrisch
+private = SYMETRISCH
+
+TOEPASSINGEN;
+Eenmalig wachtwoord genererend token = hardware apparaat om een eenmalig wachtwoord te generegen.
+Elektronische bebtalingssector gebruikt 3DES.
+Oudere besturingssystemen: DES om gebruikersbestanden en systeem gegevens te beschermen met wachtwoorden. Niet meer veilig.
+
+
+Protocollen (Assymmetrisch)
+Internetkey exchange (IKE), fundamenteel onderdeel van VPN.
+
+Voorbeeld VPN.
+
+Privénetwerk over het internet, veilige communicatie kanaal tussen 2 eindpunten.
+
+authenticatie; wie iets mag doen.
+autorisatie; je mag een bepaalde actie doen,
+acounting; loggen wie wat doet
+
+hash extracted
+dictionary, dit is nodig om de hashes van deze wachtwoordne te vergelijken met het echte wachtwoord.
+Extracted hash =? hash(van het wachtwoord. )
+bruteforcen.
+
+
+4.2 toeganscontrole
+
+Soorten toeganscontrole;
+
+Fysieke toeganscontrole
+Daadwerkelijke barries
+voorkomen onbevoegde toegang tot faciliteiten, apperatuur en andere...
+Bepaalt wie er fysiek binnen en buiten komt.
+
+Logische toegangscontrole (combinatie van hard en software)
+Hardware- en software oplossingen
+toegnang to bronnen en systemen beheren.
+Tools en Protocollen voor identificatie, authenticatie, autorisatie en verantwoording.
+
+Administratieve toegangscontrole,
+Beleid en procedures in organisaties
+controleren van ongeautoriseerde toegang
+gericht op personnel en zakelijke praktijken.
+
+Onderwerp vs. Object
+
+Onderwerp; (iemand die toegang vraagt tot iets)
+EN: subject
+gebruiker of procedures,
+
+Object(tot waartoe iemand toegang vraagt)
+Bestand, poort of I/O apparaat
+Ondewerp wil een object aanspreken.
+
+toegangscontrole;
+Dwingt af of een ondewerp de nodige toegang heeft tot het object, en een bepaalde actie kan/mag uitvoeren. Zo heeft niet iedereen toegang. Het object is hetgene waartoe iemand toegang vraag, en het ondewerp is hetgene wat toegang vraagt.
+
+Verplichte toegangscontrole (=(Mandatory Access Control = MAC))
+Beperkt de actie die een onderwerp op een object kan uitvoeren
+Een authorisatie regel dwingt af of een onderwerp al dan niet toegnang heeft tot een object.
+Zowel elk onderwerp als elk object heeft een beveiligingsniveau. Elk subject en object krijgt een acces level, die het mag bekijken.
+
+Discretionaire;
+Discretionaire access control DAC.
+Eigenaar van het object verleent of beperkt objecttoegang aan een ander onderwerp.
+Als eigenaar bepaald je de toegang van elke gebruiker.
+
+Strategieën voor toegangscontrole (cont.)
+
+Rolgebaseerde toegangscontrole, RBAC
+Role based acces control - RBAC
+voor specifieke rollen (= functies in een organisatie) zijn machtigingen verijst en toegekend om bepaalde dingen te doen.
+Je kan bepaalde dingen wel of niet doen op basis van je toegekende rol.
+Je verwerft machtigingen via je rol. Op basis van je rol kan je dus bepaalde dingen doen zoals lezen en schrijven.
+
+Op regel gebaseerde toegangscontrole;
+Rule based acces control.
+Toegangscontrolelijsten (Access control lists - ACL) om toegang te verlenen.
+Bv. Geen enkele werknemer mag buiten kantooruren toegang krijgen tot financiële dossier. Er kan dus veel meer in detail gegaan worden met regels. Zodat je complete toegang
+kan geven of afnemen onder bepaalde omstandigheden.
+
+identificatie;
+Een onderwerp vraagt toegnang tot een systeembron (object.)
+De toegangscontrole bepalen of toegang moet worden verleend of geweigerd.
+CyberSEC policies bepalen welke identificatiecontroler moeten worden gebruikt.
+De gevoeligheid van de informatie en informatie systemen bepalen hoe streng de controles zijn.
+De toename van de datalekken heeft veel organisaties gedwongen hin identificatie te verstereken.
+
+
+authenticatie methodes;
+What you know (op basis van kennis krijg je toegang.)
+Wachtwoorden, wachtwoordzinnen of pincodes zijn voorbeelden van iets dat de gebruiker weet. Wachtwoorden zijn de meest populaire verificatiemethode.
+
+what you have (op basis van wat je in je bezit hebt krijgt je toegang tot iets. )
+Smartcards en beveiligingssleutels zijn beide voorbeelden van dingen dat iemand in zijn bezit kan hebben.
+
+Who you are. (op basis van een uniek fysiek kenmerk.)
+Een uniek fysiek kenmerken, zoals een vingerafdruk, netvlies of stem, die een specifieke gebruiker identificeert, wordt biometrie genoemd.
+
+Multifactor authenticatie (2FA) worden ten misnte twee verschillende auth methodes gebruikt.
+Een beveiligngssleutelhanger is een voorbeeld, je hebt het wachtwoordn odig maar ook de beveiligsingsdongle. .
+
+
+authorisatie; toegang tot welke (netwerk bronnen)
+Wat ken de gebruiker doen met bronnen?
+read write, create delete.
+
+verzameling attributen beschrijven de Toegang
+attributen worden vergeleken met de authenticatiedatabase
+op basis hiervan vastleggen vie beperkigen.
+
+Het autorisatie beleid legt de autorisatieregels vast voor het beheren van de gebruikers toegnang.
+
+Verantwoording; accountability
+
+Herleid een actie naar een onderwerp (gebruiker of proces)
+organisatie kan dit gebruiken voor audits of facturereing
+verzameling van deze gegevens kunnen dingen inhouden zoals de inlogtijd, succesvol? welke bronnen?
+
+laat toe om acties, fouten en vergissingen te traceren.
+Implementatie via technologieën, beleid, procedures on opleidingen.
+
+logbestanden op gedetailleerde informatei op basis van gekozen parameters.
+
+Soorten maatregelen;
+Preventieve maatregelen (het voorkomen dat er iets gebeurt)
+Preventieve controle voorkomt dat ongewenste of ongeautoriseerde activiteiten
+plaatsvingen.
+
+Afschrikmiddel <-> beloning
+beloningen moedigen mensen aan om het goede te doen.
+Afschrikmiddellen weerhouden gebruikers om iets te proberen te doen.
+Enkel afschrikking isniet voldoende.
+
+Detectieve maatregelen om iets te ontdekken.
+Bij toegangscontrole: ontdekken ongeautoriseerde activiteiten
+Eenvoudig detectiesystemen: Bv. bewegingsmelder of bewaker.
+Complexere detectiesystemen; Bv. inbraakdetectie.
+
+Soorten beveiligsingsmaatregelen
+
+Corrigerende maatregelenen;
+Worden ingevoerd nadat een systeem een bedreiging heeft ondervonden.
+Corrigerende controles brengen het systeem terug naar een staat van vertrouwelijkheid, integriteit en beschikbaarheid.
+
+ze kunnen ook systemenen herstellen naar een normale toestand nadat er ongeautoriseerde activiteiten hebben plaatsgevonden.
+
+herstel maatregel.
+Geavanceerder dan corrigerende maatregelen, via herstel controles word de schade
+teruggebracht naar een vorige versie.
+Toegangscontroler voor herstel herstellen bronnen en mogelikheden.
+detectiesystemene
+Compensatieve maatregelen, proberen iets goed te maken.
+Bieden opties voor andere controler om beveiligingsbeleigen te versterekren.
+Compenserende controle kan Substitutie zijn voor andere controle die niet mogelijk is.
+
+4.3 data verduisteren.
+Dit laat ons toe om dingen te verstoppen in een bestand, die normaal gezien
+niet zichtbaar zijn.
+
+Gegevensmaskereing;
+Gevoelige data vervangen door niet gevoelige data.
+Niet-gevoelige versie ziet eruit en gedraagt zich als het origineel.
+
+Vaak vervangende gevenssets distribueren voor testen en analyse.
+
+Verschillende technieken om gegevens te weijzigen, maar zinvol te houden.
+
+-Vervangingen vervangt gegevens door authentiek ogende waarden (garanderen anonimiteit)
+Shuffeling, leidt een vervangingsset af uit de gegevens die een gebruik wil masken. De data zelf is autehntiek, maar staat op andere plaatsen binnen de kolomen.
+Zodat er bij het werken met gegevens voor ontwikkeling, dan is er tenminste anonimteit, maar kunnen de developers wel goed werken en testen. Dan mag je met dummy gegevens werken.
+
+Steganografie.
+Verbergt gegevens in een ander bestand. Bv. grafisch, audio- of nader tekstbestand.
+
+De geheime boodschap valt niet op.
+Niemand zou ooit weten dat een foto daadwerkelijk een geheime boodschap bevatte door het bestand elektronisch of op papier te bekijken.
+
+Verschillende componten zijn betrokken,
+de ingebedde gegevens (dit is de data die je wil verbergen in het bestand)
+Omslagtekst, het bestand dat de gegevens verbergt door de stege tekst. De omslag + geinbedde = stego tekst
+
+
+
+Hoofdstuk 5
+Het verzekeren van integriteit.
+
+5.1 soorten itengriteitscontroles
+
+Hashing algoritmes;
+Vormt een reeks van bits om naar een reeks van een vast aantal bits
+
+Het is een wiskundige eenrichtingsfunctie. Het is in de ene richting makkelijk te berekenen, maar anders niet.  --> weerhaakjes
+
+Een cryptografische fucntie heeft ook de volgende eigenschappen.
+De input kan uit om het even welk aantal bits bestaan.
+De output heeft steeds hetzelfde aantal bits (ongeacht het aantal van de input.)
+De hashfunctie is een eenrichtingsfunctie en het is onmogelijk om te keren.
+Het is de bedoeling dat het ook snel gaat,
+Twee verschillende inputwaarden zullen steeds een verschillende outputwaarde?
+
+
+Het zou onmogelijk moeten zijn om terug naar het origineel te keren.
+De output is altijd hetzelfde aantal bits.
+Digest -> omvormen naar het eindresultaat bits.
+
+
+Er bestaan tegenwoordig een hele reeks algoritmes, de meest populaire zijn MD5 en SHA.
+Message digest 5 algorithm (MD5) ontwikkeld door Ron Rivest. Het geeft een 128-bits output terug.
+
+Secure has algorithm(SHA) Secure hash algortithm is ontwikkeld door het US national insiture of standers and technologiy (NIST). Hiervan bestaan verschillende varianten. 256 is de meest populaire.
+
+Toepassingen;
+Controlleren op fouten in data
+Het veilig bewaren en controleren van paswoorden in databanken.
+Identificeren van data aan de hand van een kleinere waarde (fingerprint).
+Gebruikt bij efficiënte opslag van data in hashtabellen.
+
+
+Controlerenop fouten;
+Voorbeeld: Van een string gaan hashen (digest van maken) om dan de checksum te verkrijgen.
+Als je zelfs maar 1 fout zou maken, is de digest compleet anders. (GOED!!)
+Zelfs met andere fouten, is de lengte hetzelfde, maar de inhoud compleet anders, zelf met kleine fouten is het resultaat van de checksum compleet anders.
+
+Bij torenting wordt ook het hashing resultaat meegegeven, zodat de eindgebruiker kan nakijken of het wel authentiek is.
+
+
+Veilig bewaren van paswoorden.
+Gebruikersnaam en paswoord worden vaak opgeslagen in databaken.
+Databanken zijn een efficiënte manier om data op te slaan, analyserenen op te vragen.
+Het is zeer belangerijk dat wachtwoorden in Databanken worden geincrypteerd en gehased. Zodat een slechte 3rde parij geen gebruik kan maken van je gegevens.
+
+
+Veilig bewaren van paswoorden.
+poging 1
+Door de groei van data collectie en vaak vertrouwelijke aard van data, is het belangerijk voor cybersecurity personeel om steeds groeiend aantal databanken te beschermen.
+
+Databanken zijn een gewilt doelwit van cybercriminelen. Een gelekte hoeveelheid gegevens ui een databank is een data breach (data lek)
+
+Velen hergebruiken dezelfde usernamen, en pasword. Als deze combinatie gevonden wordt in een gelekte databank.
+
+Het gebruik van 1 paswoord dat je telkens lichtjes aanpast heeft weinig zin. Want het lijkt teveel op elkaar.
+
+
+Veiligbewaren van paswoorden.
+
+Poging 1; we slaan de gebruikersnaam en paswoord gewoon op in de databank. Bij het inloggen is het dan simpel controleren.
+Plaintext is zeer gevaarlijk, te eenvoudig en gewoon slecht.
+Plaintext --> als het wachtwoord gewoon wordt gehashed zou het niet gewoon in plaintext worden doorgestuurd naar de gebruiker, bij een vergeten wachtwoord.
+
+Poging 2
+
+We slaan de gebruikersnaam en de hashwaarde van het paswoord gewoon op in de databank. bij het inloggen moeten we gewoon controlleren of de hash van het ingevoerde wachtwoord gelijk is aan de
+opgeslagen hash.
+Niemand van de organisatie of van buitenaf kan niet meer simpel kijken wat het wachtwoord is.
+
+Salting:
+Een extra maatregel die we kunnen nemen om het toch veilig op te slaan..
+Salting is een extra maatregel om hashing veilige te maken.
+Wanneer 2 gebruikers hetzelfde wachtwoord gebruiken, dan zal voor beiden dezelfde hashwaarde worden opgeslagen. Hierdoor weten aanvallers dat ze simpel met 1 wachtwoord, meerdere kunnen krijgen.
+Salt is een random reeks bits dat wordt toegevoegd aan het wachtwoord. Zo zullen beide gebruikers een verschillende hash krijgen. Zefls met hetzelfde wachtwoord, dankzij de salt, wordt er rommel
+in de hash gezet. Door de code kan de salt er dan weer worden uitgehaald, en aangezien de salt is gecreerd samen met het programma, is het decoderen simpel.
+
+
+Rainbowtables.
+Vanuit een hashwaarde de oorspornkelijke input berekenen is zo goed als onmogelijk.
+Een manier is voor alle mogelijke inputwaarden. de hashfunctie uit te rekenen. en die dan op te slaan in een databank, om dan te cross checken met de wachtwoorden uit een gekraakte databank.
+Door salting worden deze methodes onbruikbaar, omdat de salt niet gekend is door de hackers.
+
+Collisions
+Hashing algoritmes moeten telkens een unieke output hebben voor verschillende inputs.
+
+Wanneer je voor 2 verschillende input waarden dezelfde output waarde krijgt, spreekt men van een collision.
+Dit is als er met twee verschillende wachtwoorden, dezelfde hash uitkomt. Dan kan je dus met meerde wachtwoordne inloggen op dezelfde account.
+
+Een Hashing algoritme veliest zijn nut als collisions bewust veroorzaakt worden.
+
+Hashing algoritmes worden zo onderverdeeld in zwakke en sterke hashing algoritmes.
+MD5 en SHA-1 zijn niet meer bruikbaar voor cybersecurity gebruik deze daarvoor dus NIET.
+
+HMAC
+Keyed-Hash message authentication code. Garandeert niet alleen de integriteit van het bericht, maar prast ook de authenticatie toe.
+
+Een hacker zou via een man-in-the-middle aanval een bericht kunnen wijzigen en hiervan een nieuwe hashwaarde kunnen berekknen zodat een ontvanger dit niet zou opmerken.
+
+Voorbeeld, Als iemand een bestand stuurt naar iemand anders, is het de bedoeling dat je dit zou dubble checken met de hash die je zelf uitkomt, en de hash die het moet zijn hetzelfde.
+Maar een Man in the middle aanval veranderd niet enkel het bestand door een virus, maar veranderd ook de authenticatie, zodat als je het zelf zou willen cheken, je hetzelfde uitkomt.
+
+Maar HMAC kan dit voorkomen. Het is vergelijkbaar met het toepassen van digitalen handtekeningen met het grote verschil dat HMAX een symmetrische sleutel gebruikt terwijl digitale handtekeningen asymetrisch zijn.
+
+Werking:
+Op voorhand wordt er een geheime sleutel gedeeld, om een veilige manier. (niet meesturen)
+De ontvanger berekend de hashwaarde van het hele bericht, inclusief de geheime sleutel.
+Die geheime sleutel is op voorhand afgesproken.
+
+
+Alice en bob delen een geheime sleutel
+Alice berekent de hashwaarde van haar versleuteld bericht waarbij zij de geheime sleutel berekend.
+Alice voegt die brekende waarde, de HMAC digest of vingeradrduk toe aan haar bericht.
+
+
+Hash(file) = AZ123
+Hash(file + S) = AZ456
+Geheime sleutel = S
+
+Alice -->(file + hash(file)) bob
+
+
+Bob: hash(file) ?= AZ123, komt hij hetzelfde uit als alice.
+Bob moet dan samen met de geheime sleutel de hash van de file berekenen; en dus zelfs als de hacker zelf de hash van de file berekend heeft (om zogezegd legit te lijken).
+Maar dankzij dat ze op voorhand een geheime sleutel hebben afgesproken, Hashed bob de file samen met de sleutel. En als de hash van de file + geheime sleutel niet hetzelfde is als de hash Diffiehet zou moeten zijn, dan weet je dat het bericht is onderschept door iemand anders. En als het overeenkomt dan is het legit.
+
+
+Maar dit is niet veilig, doordat de hash kan worden vergangen door de hash van het virus, van de man in the middle.
+
+
+Vertragende hashing algoritmes
+
+Om te vermijden dat er heel veel pogingen worden gedaan om een hash te kraken of een collision te vinden wordt er vaak gebruik gemaakt van vertraging hashing algoritmes.
+
+Een aanvaller met meer rekenkracht moet zo toch nog steeds langer wachten om de hashwaarde te kraken.
+xor.pw
+Toont hoe de werking zou kunnen werken.
+
+Hashing gaat maar langs 1 righting,
+
+5.2 Digitale handtekening;
+
+Vergelijkbaar hetzelfde als een echte handtekening, maar dan digitaal.
+
+Kan gecontroleerd worden op 2 manieren
+-het is niet aanpasbaar na het ondertekenen
+-Het betsand is daadwerkelijke afkomstig van de persoon die het gehandtekend is.
+Zo kan je de integriteit behouden van een bestand.
+
+
+Werking;
+Assymmetrisch encryptie, met twee sleutelparen. private en public.
+De verzender genereerd het sleutelpaar, door de private key wordt het bestand ondertekend. En door de publieke key kan je verifieren of dit authentiek is.
+De PRIVATE key signt het bestand, en de PUBLIK verifieerd de integriteit van het bestand.
+
+
+5.3 certificaten;
+
+Gelijkaardig aan een electronisch paspoort.
+Laat toe gebruikers, toestellen en organisaties toe om veilig informatie door te sturen.
+Je kan de certificaten van je website nakijken in je browser.
+Electronisch paspoort,
+Certificaten worden enkel uitgeldeeld door betrouwbare organisaties,
+Certificaten bieden ook vertrouwelijkheid aan door encryptie.
+Een certificaat op een website, betekend dat het HTTPS is, en dat de SSL in orde is. De website is geencrypteerd, en er is een certificaat, maar het kan nogsteeds onveilig zijn.
+De server zal aan de website vertellen dat het certificaat van hem is, dit gebeurt bij het inladen van de website. De PRIVATE key wordt gebruikt om te bewijzen dat het certificaat echt van die website is.
+Een certificaat authenticeert en verifieert dat de verzender van berichten daadwekelijk die persoon is.
+
+HTTPS zelf is niet per ce veilig, Andere mensen kunnen niet meelezen via HTTPS, maar de inhoud van de website zelf kan nogsteeds malicious zijn. De mensen die de certs uitdelen gaan niet nakijken of de websites zelf fraudulous zijn.
+
+Elke browser heeft een lijst van elke ROOT CA, elke organisatie bijwijst ook aan de ROOT ca dat ze het domein bezitten.
+
+Certificaten zijn opgesteld volgens een bepaalde standaart, X.509. De PKI (public key infrastucture) is de verzameling van beleid, functies en procedurs om certificaten te bewaren, beheren en verspreiden, gebrioken en ongeldig verklaren.
+
+Intercepting proxy; Een tussen server, waardoor je zelf internetverkeer krijgt, die je dan zou kunnen onderscheppen via wireshark of burp suite. Dankzij de intercept van burp suite, kan je dan alle gegevens van een website intercepten. Deze proxy stuurt geen gegevens door, maar intercept ze.
+
+
+HOOFDSTUK 6
+
+Het 5x9 principe (availiility, A in de CIA driehoek)
+Hfstk 4,5,6 = CIA
+
+Hoe kritieke iinfrastructuur verdedigen, en het probleem (als het mis gaat) kunnen oplossen. Terwijl alles beschikbaar blijft voor iedereen.
+Data beschikbaar houden, de maatregelen om deze beschikbaarheid te veerbeteren, kunnen reageren op de problemen, en na de feiten alles recoveren.
+
+Het 5x9 principe = 99,999 (5 keer 9)n systemen met een uptime van 99.999%, ongeveer 5 minuten paar jaar downtime.
+Hoge beschikbaarheid kan je bekomen door
+single point of failure vermijden (1 ding kapot --> ALLES KAPOT), we moeten dus werken met meerdere systemen, zodat 1 kapot ding niet erg is.
+Robuuste systemen bouwen
+monitoren van alles, het moeten weten als er problemen zijn. Als je niet weet dat iets is uitgevallen -> probleem
+Failures/problemen detecteren.
+Redundancy en backups.
+
+Deze dingen zijnnodig in sectoren met hoge beschikbaarheid(crutiale omgevingen)
+We moeten er alles aan doen om te voorkomen dat de dingen van deze crutiale falen, en breken.
+
+Bedreigingen van de beschikbaarheid
+Erzijn heel wat oorzaken van verlies van beschikbaarheid van het falen van systeem tot een natuurramp.
+-system fialure (ergens een fout in het programme/hardware)
+-niet-doelbewuste oorzaak (iemand die per ongeluk een foutje maakt bij een systeem)
+-Doelbewuste aanval
+-natuurramp
+
+
+6.2 maatregelen om de beschikbaarheid te verhogen
+
+Assets management
+
+Bedrijven moeten weten welke hardware- en software assets in het bedrijf aanwezig zijn. (Er moet constant inventaris zijn van alle producten in een bedrijf, altijd weten welke toepassingen je draait)
+Assets management; omvat het beheren van al deze assets. Er dient een volledig overzicht te zijn van alles.
+Het bedrijf kan zo een inschatting maken welke beveiligingsgevaren er zouden kunnen zijn, als we weten welke hard en software er is, en er is een bepaalde exploit met bepaalde hard en software. Dan kan je nagaan of je zelf een probleem hebt.
+
+Wat nemen we om?
+Elk hardware systeem.
+Elk bestuuringssyteem.
+Elk hardware netwerk toestellenelk network  devince operating system
+elke software applicatie
+elke firmaware
+Alle runtime enviroments.
+
+
+Asset management;
+Alles groeperen van documenten en objecten. Deze kunnen clasificeren om bepaalde factoren zoals belangerijkheid.
+
+Identificeren;
+Er zijn data bases met common vulnerabilities and exposures, waarmee je dan kan cross-checken met je eigen asset management;
+
+Risk analieze
+Een inschatting maken van welke gevaren er zijn, van zowel natuurlijke of menselijke invloeden.
+Mitigation
+Het verminderen van het risico of het verklienen van de kans op een aanval. Verminderen van risico. Bvb. Alles beveiligen, firewall, rechten op bestanden instellen.
+
+Update beleid (regelmatig updaten.)
+Welke hardware en software is verouderd en zal geüpdated worden.
+Helpdesj, die moet meteen alle informatie over een bepaalde computer hebben.
+
+
+Gelaagde beveiliging, alle verdedeging werkt met lagen, zodat er meerdere barieres zijn waardoor iemand moet dringen, zodat de kans tot een echte inbraak veel kleinder is;
+Een diepe verdedeging.
+Een geslaagde beveiliging zorgt voor de meest omvangrijke beveiliging. Als iemand door laag 1 is, moeten ze wel nog door laag 2. Daarom zijn meerdere barrières nodig.
+
+Het beperken van de toegang (limiting)
+Dit verminderd de kans tot een aanval. De werknemers moeten enkel toegang hebben tot de dingen die ze nodig hebben van hun job.
+
+Varieren;
+Diversiteit, varieer in manieren van beveiliging wanneer men zich de toegang heeft verschaft tot de ene laag. Mag dit niet de andere lagen in gevaar bregen.
+
+Obscuring,
+het verduisteren van je informatie, niet zeggen welke soft en hardware bestaat in het systeem.
+KISS = keep it simple stupid
+Eenvoud = hogere beschikbaarheid, te lastig = veel meer fouten in een systeem.
+
+
+REDUNDANTIE INBOUWEN
+Een single point of failure moet altijd vermeden worden, dit gaat over alles.
+
+Single points of failures(zwakke schakels) die er voor zorgen dat alles faalt.
+
+Dit kan je oplossen door niet op 1 ding te vertrouwen. Als je meerdere vervangingen hebt voor alles, is dit probleem weg gewerkt. Niet vetrouwen op maar 1 element.
+
+
+N+1 redundantie, is een algemeen principe, dat ervoor zorgt dat je 1 meer neemt dan dat je zelf nodig hebt voor het gebruik (4 wielen op een auto (1 reserve))
+
+Weerstand versterken -->hoge telorantie is nodig om het falen te voorkomen.
+
+6.3 incident response.
+
+Incident respons omvat een aantal procedures die bedrijven moeten hanteren om te reageren wanneer een buitengegewoon event plaatsvint.
+Bedrijven moeten incident repsons plannen  opstellen om voorbereid te zijn om het ergste.
+Het bestaat uit 4 fasen
+
+1 voorbereiding, planning opstellen voor mogelijke gebeurtenissen.
+2: Detectie en analyse; het ontdekken van zo een gebeurtenissen.
+3. Isoleren, uitdoven en herstellen. Inspanningen doen om de gebeurtenis te isoleren, eventueel te stoppen of uit te doven en dan ook het opgeslopen schaden kunnen herstellen.
+Bv. Isoleren -> branddeuren. Het compartementeren van de brand.
+4. Post incident follow up. Wat is er mis? Wat is er gebeurt? Waarom is dit gebeurt? En kijken hoe dit vermijd kan worden.
+
+Op technologisch vlak;
+NAC (network acces control), geeft toegang aan gebruikers tot een netwerk indien zij volledig voldoen aan de polecy requirements van de organisatie. Het NAC systeem eist als toestellen verbinden met het netwerk, de criterea voldoen.
+
+Intrusion Detection Systems.
+Monitort het netwerkverkeer. IDSs luisteren naar hackpogingen en ongeauthoriseerde toegang.
+
+Intrusion preventing system.
+Een stap verder, staat meteen na de firewall. Als je door de firewall bent (maar wel louch) dan wordt je gedetecteerd en gestopt. Wordt op het pad tussen de bron en de bestemming geplaats. Het detecteerd onmiddeiljk netwerkproblemen en pakt het ook aan.
+
+Advanved threat intelligence. Dit help de organisaties om cyberaanvallen te detecteren tijdens een van de fases. Soms zelfs voorhet plaatsvinden van de aanval.
+
+Disastear recovery.
+Dit speelt zich af na de feiten. Dit is het plan om zo snel mogelijk alles te recupereren en ervoor te zorgen dat dit hersteld kan worden.
+
+Soorten rampen, Natuurrampen, rampen door mensen.
+Het is nodig voor organisaties om bij te houden wanneer er een ramp optreedt. Een ramp omvat van alles
+Er isnood aan continuiteit bij een bedrijf. organisaties kunnen heel wat doen om zich te bewapenen tegen bepaalde rampen.
+Het omvat veel meer dan zorgen voor data, en redundante systemen.
+Documenten van de config FailuresZorgen voor alternatieve communicatie
+Stroomvoorziening fail-safe maken. Nagaan wat de impact voor de applicaties zijn.
+
+Stel een policy op met richtlijnen om de continuïteit op verschillende vlakken te garanderen en maak een lijst van deze richtlijnen.
+Prioriteiten stellen op basis van de kritieke systemen en processen van het bedrijf.
+Identificeren van alle mogelijke kwetsbaarheden, edrijgingen en het berekenen van risico's.
+Test alle plannen.
+Actueliseer deze regelmatig.
+
+
