@@ -1,0 +1,64 @@
+\documentclass{article}
+\author{iljo De Poorter}
+\title{Analyse 2}
+\begin{document}
+
+\subsection{oefeningen}
+(oefeningen, voorbeelden fouten softwareprojecten.)
+\begin{itemize}
+\item De programmeur/tester, ze hielden waarschijnlijk enkel de laatste 2 cijfers van de leeftijd bij. Dus 104 was dan 04 in de database.
+\item Programmeur/tester, want zij hielden geen rekening met schrikkeljaren.
+\item De tester/analyst/ontwerp. Zij hielden geen rekening met de startprocedure en veiligheid.
+\item De projectleider/klant was in de fout, want hij had geen rekening gehouden met de requirements van de klant omtrent de levertijd en de kost. De klant zelf veranderde waarschijnlijk te veel van gedachten en verandereden teveel requirements.
+\item De analyst/programmeur/tester/iedereen. er was niet genoeg info over wie in de fout was.
+\item De programmeur en de ontwerper waren in de fout, want zij hebben het zo onnodig complex gemaakt, en de progammeur heeft niet 'geprotesteerd'.
+\end{itemize}
+
+\section{Behoeftenanalyse}
+
+vereisten is het modelleren van verhalen.
+DENK SIMPEL, GRUGBRAIN.
+Wat wil de klant, wat moeten wij programmeren. Werken volgens de requirements.
+
+Requirements kunnen worden onderverdeeld.
+Functioneel vs niet functioneel
+Functionele requirements in een berichtensysteem zijn dingen zoals inloggen of teksten schrijven, de texten versturen. Beschrijft de inputs van het programma op de outputs, nbeschrijt dus wat het systeem moet kunnen. 
+
+De niet-functionele requirements, het moet passen binnen de layout van de firma
+
+Use cases: definitie.
+Een use case omvat alle maniere waarop het systeem gebruikt kan worden om een bepaald doel te behalen.
+
+Het verteld niet HOE het systeem moet worden geimplementeerd.
+
+Use case diagram, Een diagram waarin elke use case staat, en wie de (primaire) actoren zijn van die use case. Bv. Wie registreerd, wie speelt een spel?. Een gewone gebruiker kan enkel registreren. En daarna wordt het een speler, en een speler moet kunnen aanmelden, spelen etc.../ 
+
+\subsection{Use case diagram, bibliotheek.}
+3 rollen hebben, en minstens 1 rol per activiteit.
+
+\begin{itemize}
+\item Lener (klant) 	aanmelden, boeken uitlenen, boeken terugbrengen.
+\item Bibliothecaris (beheerder) boeken toevoegen, boeken verwijderen, boeken zoeken, boeken uitlenen, boeken terugbrengen. Gebruikers toevoegen. Aanmelden
+\item niet geregistreerde gebruiker (gebruiker) boeken zoeken, registreren.
+\end{itemize}
+Een include is het feit dat bv usecase A ALTIJD zal moeten gebeuren met usecase B.
+Om geld te storten moet je ALTIJD eerst aanmelden met je pincode. Het is dus een include, want het is VERPLICHT.
+Extends; use case A voertuse case B uittijdenseenalternatiefverloop.  Die use kan kan soms een andere use case bevatten.
+
+\subsection{Use case diagram, bibliotheek.}
+\begin{itemize}
+\item Nieuw lid 	registreren
+\item Lid	Aanmelden, boek uitlenen
+\item Werknemer	aanmelden, Iemand registreren, Nieuw boek toevoegen, uitleningen controlleren
+\item werkgever	Iemand registreren, boek toevoegen, aanmelden, boek uitlenen.
+
+\item Een extend is dus een alternatief verloop, een include is een verplichte use case.
+\item Een include is dus een verplichte use case.
+
+
+\item Om een boek uit te lenen moet je geregistreerd zijn/aangemeld zijn, dus is dus een include use case
+
+\item Een exclude voorbeeld, Je kan geen boeken uitlenen als je nog boetes hebt. Domeinregel dus.
+\end{itemize}
+
+\end{document}
