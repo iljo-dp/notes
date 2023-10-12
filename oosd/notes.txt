@@ -1,0 +1,13 @@
+Controle structuren;
+
+Herlahingsstructuren;
+-> tellergestuurd	for	geg. hoeveelheid uitvoer
+-> conditionele		--> if, #keren uitvoer niet geweten
+              while	--> #keren uitvoer wel gewetencontroleert eerst --> 0 of meer keer uitvoeren
+	      do while	--> 1 of meer keer uitvoeren
+
+			Logische opperatoren.
+EN		&&	 --> beiden true == true, als		-->	Als de eerste fout is, zal het de tweede NIET evalueren.
+OF		||	 --> 1 van beiden true == true, als	--> Als de eerste al juist is, zal de tweede niet gecontroleerd worden
+NIET		!	 --> true == false
+
