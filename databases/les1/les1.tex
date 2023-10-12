@@ -1,0 +1,255 @@
+\documentclass{article}
+\author{iljo De Poorter}
+\title{Databanken LES 1}
+\begin{document}
+\maketitle
+\section{Start}
+Iedereen gebruikt databanken. En overal waar je komt worden er gebruikt
+\subsection{fBasisdefinities}
+Databank; Een gedeelde verzameling van logisch met elkaar verbonden gegevens en hun beschrijving, ontworpen om aan de informatienoden te voldoen.
+
+-digitaal opgeslagen
+
+-specifiek bedrijfsproces
+
+-specifieke groep(gebruikers en apps)
+Ponskaarten, Bij de Colryt, om zo de prijzen van dingen vroeger te berekenen.
+
+DBMS
+Database management system.
+Een verzameling's computerprogramma die nodig is om een databank te definiëren/creëren/wijzigen/beheren en gebruiken.
+Databank + het systeem = DBMS
+
+\section{gegevensbeheer}
+Waarom is het ontstaan?
+
+\subsection{Decentraliseerd vs gecentraliseerd.}
+\subsubsection{decentralised}
+De = er is een appart file voor alles van elke gebruiker. Een klant zijn data staat in verschillende databanken, dus zijn naam staat elke keer appart in verschillende file's. Dus als zijn naam veranderd moet je op veel plaatsen dingen aanpassen.
+
+Dus risico op dubbele/redudante opslag.
+Risico op inconsistentie
+sterke koppeling tussen applicaties en data
+gelrijktijdige toegang is niet echt mogelijk(1 bestandje)
+Applicatie voor meerdere dienstens niet echt mogelijk.
+Als je 1 verandering wilt maken in je DB moet je overal alles aanpassen.
+
+\subsubsection{centralised}
+DBMS, alles hangt aan elkaar. Verschillende apps gebruiken dezelfde DBMS die dan vasthangt aan de dataopslag. Dankzij de DBMS kan alle data op 1 plek worden beheerd.
+
+efficienter, consistenter. Eenvoudiger te beheren. Meerdere mensen kunnen tegelijk de data beokijken/gebruiken.
+
+Databank model = schema.
+Bevat
+	-Een beschrijving van de databankstructuur
+	- Specificaties van de elementen, hun eigenschappen, relaties, beperkingen.
+-opgeslteld tijdens het ontwerp van de DB
+
+Gegevensmodel
+	weergave van de gegevens met hun algemene kenmerken.
+
+\subsection{conceptueel model}
+-Algemene beschrijvingen gegevenselementen, kenmerken en relaties
+	-gebruikt door IT en business
+	-weergave "hoe" de business de gegevens ziet
+	-voorsteling (E)ERD diagram
+veronderstellingen en ontbrekende informatie duidelijk vermelden.
+Met de klant moet alles zeer duidelijk worden besproken wat word opgeslagen, en hoe, en alles daar rond.
+
+ERD = (hoofdstuk 2-4) = test = het conceptuele model.
+
+\subsection{Logisch gegevensmodel.}
+Vertaling conceptueel gegevensmodel naar het type databankmodel.
+	-relationeel, hierarigisch, oop. NoSQL.
+-omzetten naar intern (fyziek) gegevensmodel
+	geeft info over de fysieke opslag
+		-waar worden de gegevens opgeslagen
+		-onder wleke vorm?
+		-Indexen die het ophalen versnellen.
+	-Zeer DBMS afhankelijk
+Externe gegevensmodel
+	-deelverzameling
+	-voor iemand specifiek.
+
+Concepte model(erd) --> logisch model(relationeel) --> fysiek.
+
+\section{Fasen in het ontwerp?}
+Fase 1 = Verzameling en analyseren van de fuctionele/inhoudelijke vereisten
+
+Fase 2 = Conceptueel ontwerp
+
+Fase 3 = Logisch ontwerp
+
+Fase 4 = Fysiek ontwerp
+
+Berekenbare info word NIET bijgehouden(geen leeftijd, maar wel geboortedatum)
+
+Mogelijke bedrijfsprocessen
+	- het maken van facturen
+	- werkroosters en prestaties van werknemers
+
+Het logisch en het fysiek ontwerp is zeer DBMS specifiek. Terwijl het concept daarvan los hangt.
+
+\subsection{Fase 1}
+Doel; weten wat we gaan bijhouden en opnemen in de databank?
+Wat is nodig om op te slaan? Wat niet.
+
+Dit kan via interviews met de klant en analyse van de rapporten en formulieren.
+
+Vragen die moeten beantwoord worden
+
+Welke data moet in de databank worden opgeslagen?
+
+Wat is de betekenis van de data?
+
+Hoe zal de data worden verwerkt?
+
+Wat is de beoogde functionaliteit
+
+\subsubsection{voorbeeld}
+We willen info opslaan over films en autheurs
+
+Relevante data is de titel van de film, jaar, acteurs etc etc
+Er moeten nieuwe films kunnen worden teogevogd, en bestaande films kunnen worden aangepast.
+Het moet mogelijk zijn een overzicht te krijgen van alle films van een bepaalde acteur.
+
+\subsection{Fase 2}
+Doel; Conceptueel model opstellen
+
+Een abstractie van de data en de onerlinge verbanden.
+Gebruiksvriendelijkheid
+Formeel en ondubbelzinnig voor het databank ontwerp?
+Een ERD is een grafische voorstelling van het conceptueel model.
+
+\subsubsection{voorbeeld}
+De data zal worden georganiseerd rond de centrale concepter Film en Acteur
+
+Gegevens die we opslaan
+enz enz..
+
+\subsection{Fase 3}
+Type databank is betekend. (relationeel, OO, hierarchisch, netwerk, NoSQL)
+De data wordt georganiseerd in tabellen, met een primaire sleutel.
+De relaties worden geimplementeerd met vreemde sleutels.
+De integriteitsregels worden geimplementeerd.
+De tabellen worden genormaliseerd.
+
+Voorbeeld;
+Vanaf nu spreken we over "tabbellen" en een relationele databank.
+
+\subsection{Fase 4}
+Doel; de databank implementeren in een DBMS.
+Je kiest een product(DBMS)
+Je implementeert het logische model in de DBMS.
+Je implementeert de integriteitsregels in de DBMS.
+
+-Verzamelen en anaylseren van de DATA.
+	-Domeinanaylse, functionele analyse, inhoudelijke analyse.
+-Conceptueel model opstellen
+	-Concpetueel model(EER diagram)
+-Logisch model opstellen
+	-Logisch databank schema
+-Fysiek model opstellen
+
+test kunnen vertalen van conceptueel naar logisch en fysiek.
+Bij het laatste voorzien we ook een .sql script om de DB te maken.
+
+
+\section{EERD, entity relationship diagram}
+Waarom een EERD?
+
+Universeel, en handig om met de klant over te praten, zeer simpel te snappen.
+
+\subsection{inleiding}
+Bevat 3 bouwstenen.
+Entiteiten, relaties, attributen.
+Het entiteiten model werd door Peter Chen in 1976 voorgesteld.
+
+\subsubsection{Entiteiten}
+Een entiteittype;
+	
+	-bestaat in de reële wereld
+	
+	-Kan zowel abstract als concreet zijn.
+
+	-Is ondubbelzinning te identificeren.
+
+	-karakteriseert een groep van objecten met dezelfde eigenschappen.
+
+	-heeft een naam en inhoud.
+
+\subsubsection{Attribuuttype}
+Een attribuuttype
+	-is een karakteristiek van een entiteittype.
+	-beschrijft het entiteittype.
+
+Elke entiteit heeft een specifieke waarde voor elke attribuut.
+
+ \subsection{Entiteittype en attribuuttype}
+ Een entieteittype is identificeerbaar en moet een inhoud hebben.
+
+
+Een attribuuttype;
+Het ER-model kent en aantal mogelijkheden om he attribuut verder te karakteriseren.
+
+	-Enkelvoudige versus samengestellede attrubuten?
+	
+	-Enkelwaardige versus meerwardige attributen
+
+	-Afgeleide attributen
+
+	-kanidaatssleuter attributen
+
+Enkelwaardige type's kunnen maar 1 waarde hebben, meerwaardige kunnen er meerdere hebben. Een titel van een film kan maar 1 waarde hebben, maar het genre kan meerdere type's zijn(bv. romcom, thriller)
+
+Afgeleide atribuuttypes, dit zijn dingen die we niet letterlijk opslaan, maar kunnen berekenen. We berekenen de btw niet in € per aankoop, maar we slaan wel het percentage op en de prijs waardoor we het kunnen berekenen.
+
+Kanidaatsleutelsatributen, éen attribuut of meerdere attributen samen die de entiteiten UNIEK maken en identificeerbaar.
+\subsubsection{Voorbeeld student}
+attribuuttypes om bij te houden van een TABEL student
+Student
+naam
+
+righting
+
+geslacht
+
+geboortedatum
+(leeftijd, is afgeleid)
+
+Kanidaatsleutelattribuuttypes zijn identificerend, en UNIEK
+Rijkregisternummer
+
+hobby's (meerwaardig, je kan er meerdere hebben)
+
+
+\subsection{Relatietype}
+Entiteittypes kunnen onderling verbanden hebben.
+	-acteurs spelen mee in een film
+
+	-een student volt een aantal cursussen
+
+Er kunnen één, twee, drie of meerdere entiteittypes betrokken zijn in een relatie
+	-Drie, een erts schrijft een medicijn voor aan een patient.
+
+De graad van ene relatietype = het aantal verschillende entiteittypes die deelnemen aan het relatietype.
+Voorbeeld van een unaire of recursieve relatie.
+
+
+\subsection{Relatie attribuut-type}
+Attributen die eigenschap zijn van de relatie zelf.
+Bv. De relatie tussen een actuer en een film. Maar de rol die de acteur vertolkt dat is de eigenschap van de relatie. 
+Ook relatie types kunnen eigenschappen hebben, wanneer een kernmerk een eigenschap is van een relatietype en niet van één van de betrokken entiteittypes.
+
+\subsection{cardinaliteit}
+De cardinaliteit van een relatie is het aantal entiteiten van het ene type dat kan deelnemen aan een relatie met een entiteit van het andere type.
+Dit is op basis van de maximumCardinaliteit.
+
+	-1 op 1
+
+	-1 op veel
+
+	-veel op veel
+De cardinaliteit moet worden afgetoetst met de opdrachtgever.
+De cardinaliteit betekent aantal en wordt uitgedrukt als getal.
+\end{document}

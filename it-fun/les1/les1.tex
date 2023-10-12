@@ -1,0 +1,136 @@
+\documentclass{article}
+\author{iljo De Poorter}
+\usepackage[dutch]{babel}
+\title{Eerste les It-FUN}
+\begin{document}
+\maketitle
+
+\section{Inleiding}
+\subsubsection{Voorstellen van getallen}
+Gettalen kunnen op verschillende manieren worden voorgesteld.
+V, IIII/, 5, 101, 0x5, 0b. is allemaal 5.
+\subsubsection{Definities}
+Een cijfer is een symbool dat gebruikt wordt bij de voorstelling van getallen.
+
+
+Decimaal, 0,1,2 tot 9.
+Door deze achter elkaar te plaatsen krijgen we getallen.
+\subsection{Positionele systemen}
+We moeten geen def's van buiten kennen. Maar wel kennen en snappen.
+Het is een talstelser waarbij een getal wordt voorgesteld door een reeks symbolen of cijfers. En hun positie is van belang.
+3021 = 3² + 10² + 10$^2$ + 10$^0$
+\subsection{Binaire stelsel}
+Grondtal = 2, verzameling symbolen {0,1}.
+Bv. 1011010 = 1*2$^6$ + 0*2$^5$ + 1*2$^4$ + 1*2$^3$ + 0*2$^2$ + 1*2$^1$ + 0*2$^0$ = 90
+\subsubsection{IP adressen}
+ipV4 is 32 bits. Dat wordt dus veel te lang met en onoverzichtelijk met veel kans op fouten. Daarom doen we dit in een ander talstelsel. Dotted decimal.
+\subsubsection{Afspraken en notities}
+Als we met een bepaald talstelser werken zetten we er haakjes rond met dan de "base" van het talstelsel. Binair is base 2 dus (10)2. Niet nodig met normaal base 10 systeem wat normaal is voor ons.
+\subsubsection{Binair tellen}
+Methode.
+1. Beginnen bij 0
+2. Vervang het laatste cijfer met zijn opvolger
+3. Wanneer een 1 verhoogd wordt gaan we een rang hoger met een.
+4. Ga naar stap 2.
+Dus 
+0
+1
+10
+11
+100
+\subsubsection{Definities}
+bit = binary digit
+afgekort b
+1 cijfer (0 of 1) in het binaire stelsel
+
+Byte = 8 bits
+afgekort B
+
+msb = most significant bit
+lsb = least significant bit
+msb = het eerste cijfer van links
+lsb = het laatste cijfer van rechts
+\subsection{Octale getallen}
+Grondtal = 8
+Verzameling symbolen = {0,1,2,3,4,5,6,7}
+Voorbeeld is bv (1024)8 = 1*8$^3$ + 0*8$^2$ + 2*8$^1$ + 4*8$^0$ = 532
+Ipv ()98 kan er ook gewoon een 0 voor jouw getal staan
+
+\subsubsection{Octaal stelsel}
+0,1,2,3,4,5,6,7
+Dus 8 is dan 10 en 9 is 11 enz.
+0 = 000
+1 = 001
+2 = 010
+3 = 011
+4 = 100
+enz...
+elk cijfer in het octale stelsel kan je voorstellen met 3 bits.
+\subsubsection{toepassing}
+Bestandpermissies in Linux;
+Bestaat uit 3 octale cijfers;
+Algemeen; -rwx(owner) rwx(group) rwx(other) bestandsnaam.
+111 = 7 = rwx, 101 = 5 = r-x
+\subsection{Hexadecimale getallen}
+Grondtal = 16
+Verzameling symbolen = {0,1,2,3,4,5,6,7,8,9,A=10,B=11,C=12,D=13,E=14,F=15}
+Voorbeeld is bv (1024)16 = 1*16$^2$ + 0*16$^1$ + 2*16$^0$ = 4096
+Voorbeeld, (A1) = 10*16$^1$ + 1*16$^0$ = 161
+\subsubsection{Hexadecimaal stelsel}
+0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+Dus 10 is A en 11 is B enz.
+0 = 0000
+1 = 0001
+8 = 1000
+9 = 1001
+F = 1111
+10 = 10000
+\subsubsection{toepassing}
+ipV6 adressen
+128 bits, 32 hexadecimale cijfers in groepen van 4
+
+MAC adressen
+48 bits, 12 hexadecimale cijfers in groepen van 2
+\subsection{Conversie tussen talstelsels}
+\subsubsection{conversie met basis van een macht 2}
+In geval dat d ebasis van een talstelsel een macht van 2 is, zal een van de symbolen worden voorgesteld door een vast aantal bits.
+VB.
+Octaal talstelser basis = 8 = 2²
+
+Binair naar hexadecimaal. (11010,0100001)2 = (0001,1010,0100,0010)2 = (1,A,4,2)16 
+(7,8A)16 = 0111,100011010 
+(4,17)16 = 000100,00110110)2 = 4,056
+
+\subsubsection{oefeningen op conversie}
+
+1. (100110010011)2 = (993)16 = (4623)8
+
+100 110 001 011
+
+4 6 2 3
+
+2. (1001110011110010)2 = 9CF2 = (116362)8
+
+001 001 110 011 110 010
+
+1 1 6 3 6 2
+
+3. (101010111100)2 = ABC = (5274)8
+
+101 010 111 100
+
+5 2 7 4
+
+4. (1FD)16 = (0001 1111 1101)2 = (111111101)2 (voorste nullen schrappen)
+
+5. (CCC)16 = (1100 1100 1100)2
+
+6. (5307)8 = (101 011 000 111)2
+
+7. (7264)8 = (111 010 110 100)2
+
+8. (2A5C)16 = (0010 1010 0101 1100)2 = (000 010 101 001 011 100)2 = (25134)8
+
+9. (243)8 = (0010 100 0011)2 = (010 100 011)2 = (1010 0011)2 = (A3)16
+
+\end{document}

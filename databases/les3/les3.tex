@@ -1,0 +1,41 @@
+\documentclass{article}
+\author{iljo De Poorter}
+\title{Les 3 databases.}
+\begin{document}
+\maketitle
+
+\section{Hoofdstuk 2 en 3)
+Wat is een zwak entiteitstype
+
+\begin{itemize}
+\item Het is afhankelijk van een andere entieit.
+\item Geen hoofdsleutel
+\item Min cardinaliteit van 1.
+\end{itemize}
+
+\section{Enhanched entiteits relation diagram}
+Vanaf nu is een ERD een EERD
+Een entiteitstype is een verzameling van entiteiten met dezelfde attributen.
+Het komt voor dat dergelijke collecties verder moeten worden onderverdeeld in deelverzamelingen. 
+	-Zijn belangerijk voor de gebruikers van toepassing
+	-moeten apart kunnen behandeld worden.
+
+Als "SUPERENTITEIT" kiezen we dan bv voor crewmember. Dan houden we bij wat appliceerbaar is voor elk crewmember en daaronder verdelen we dan in nog meer deelen de verschillende rollen, soufleur, schrijver, acteur, componist. Deze zijn allemaal crewmember, niet omgekeerd. Een duif is een vogel, maar een vogel is geen duif.
+
+We hebben dus de hoofd ERD, Crewmember, met alles wat voor iedereen geld. En dan bv een nieuwe entieit genaamd regiseur, die bijhoud wat de registijl is, een eentje van de Acteur waarin de naam van zijn toneelschool wordt bijgehouden.
+
+Generalisatie en specialisatie
+\begin{itemize}
+\item Generalisatie: Een superentiteit wordt opgedeeld in subentiteiten.
+\item Specialisatie: Een subentiteit wordt opgedeeld in subsubentiteiten.
+\end{itemize}
+Specialisatie komt overeen met een top-down proces van conceptuele verfijning
+generalisatie is een bottem-up proces.
+
+\section{disjoint}
+Als een doorsnede leeg is. Als een entiteitstype geen deelentiteiten heeft die gemeenschappelijke entiteiten hebben. Iedereen die al normalisatie heeft gedaan en iedereen die normalisatie leuk vond is niet hetzelfde. 
+
+Mandatory: Als een entiteitstype een deelentiteit heeft die verplicht is.
+or: Als een entiteitstype een deelentiteit heeft die optioneel is.
+and, 
+\end{document}

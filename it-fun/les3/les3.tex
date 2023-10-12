@@ -1,0 +1,52 @@
+\documentclass{article}
+\author{iljo De Poorter}
+\title{Les 2}
+\begin{document}
+\maketitle
+\section{Bewerkingen in het binair stelsel}
+Optellen in het decimaal
+Optellen werkt hetzelfde als bij het decimaal, maar als je dus 11 + 10 doet krijg je dus 101
+\subsubsection{Opetellen in het decimaal stelsel/zelfde methode als binair}
+Werkwijze, scrijf de twee getallen onder elkaar met de komma's onder elkaar.
+Tel cijfer per cijfer bij elkaar op, van rechts naar links.
+Draag indien nodig een 1 over naar de volgende kolom.
+
+\subsection{oefeningen}
+\begin{enumerate}
+\item (1011)2 + (10101)2 = (100000)2
+\item (110,11)2 + (10,101)2 = (1001,011)2
+\item (23,25)10 + (40,5)10 = (...)2 = (101111,01)2
+\end{enumerate}
+Zie blad
+\section{complementen}
+(1011) = 11
+(0100) = 1(1011)
+(00001011)2 = 11
+(11110100)2 = 7(11)
+Complemtenten draaien alle 0'en en 1'en om. 
+127+87 = 214
+(01111111)2 + (01010111)2 = (11001110)2
+127-87 = 40
+(01111111)2 - (01010111)2 = (00101000)2
+106 = (01101010)2
+106 + 172 = 278
+(01101010)2 + (10101100)2 = (100110110)2
+Teken is gewoon het getal in binaire vorm.
+Exces-127 is het binair van het getal plus 01111111
+2's complement is het het binair met een positief getal en het inverten van elk getal + 1 voor een negatief getal
+Dus Vb: 106 = (01101010)2, 01111111+01101010 = 11100101, 01101010
+\section{Oefeningen}
+	Teken + abs		excess-127		2's complement
+	00001010		10001001		00001010
+	10001101		01110010		11110011
+	00101011		
+106	01101010		11101001	        01101010
+-106	10010110		00010101		10010110
+127	01111111		11111110		0111111
+-127	11111111		00000000		10000001
+128	overflow		11111111		overflow
+-128	overflow		overflow		10000000
+
+
+\end{document}
+
