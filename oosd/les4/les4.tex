@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+
+
+\titleformat{\section}
+{\huge\bfseries\lowercase}{}{0em}{}[\titlerule]
+
+\titleformat{\subsection}
+{\bfseries\Large}{$\bullet$}{0em}{}
+
+\titleformat{\subsubsection}[runin]
+{\bfseries\large}{}{0em}{}[---]
+
+
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\theauthor}
+
+\vspace{.25em}
+i@iljo.dev, samenvatting OOSD
+\end{center}
+}
+
+\begin{document}
+\title{R\'esum\'e}
+\author{OOSD}
+\maketitle
+
+\section{Inleiding}
+Samenvattingen herhalingsstructuuren; 
+For, als we weten hoeveel keer we iets moeten herhalen.
+While, als we niet weten hoeveel keer we iets moeten herhalen.
+Do-while, als we iets minstens 1 keer moeten herhalen.
+
+\subsection{methodes}
+Eerst moeten we deze aanmaken. 
+Keyword is altijd private, en dan uiteindelijk een return type. Als we niets terug geven, maar enkel iets doen is het "void", als deze informatie terug moet geven plaatsen we het type van deze return waarde.
+\subsubsection{parameters}
+Deze kunnen we meegeven aan een methode, en worden dan gebruikt in de methode.
+Dit gebeurt als we dus vanuit onze hoofdfunctie een string willen meegeven aan een methode, dan zetten we de string tussen de haakjes van de methode. dus bv private int foobar(int invoer).
+
+\subsubsection{Waar?}
+In de main van de methode zelf, of in de main van het programma zelf. new Oefening1.foobar(5);
+
+Niet in de main, maar in een andere methode. Dan moeten we deze methode eerst aanroepen in de main, en dan pas de methode die we willen gebruiken.
+
+Heeft het parameters?
+Plaats deze tussen de haakjes --= foobar(5);	
+\subsubsection{Logische poorten}
+EN, beiden true == true
+OF, 1 van beiden true == true
+NIET, true => false, false == true
+
+\subsection{Welke uitvoer geven de volgende statements in Java?}
+\begin{verbatim}
+i = 1, j = 2, k = 3, m = 2
+i == 1			true,1
+i == 3			false,1
+i >=1 && j < 4		true, 2
+m <=99 && k<m		false,2
+j>=i || k==m		false,2
+k+m<j || 3-j>=k		true,1
+!(k>m)	        	true,1
+\end{verbatim}
+\end{document}
