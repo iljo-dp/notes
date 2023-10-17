@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+
+
+\titleformat{\section}
+{\huge\bfseries\lowercase}{}{0em}{}[\titlerule]
+
+\titleformat{\subsection}
+{\bfseries\Large}{$\bullet$}{0em}{}
+
+\titleformat{\subsubsection}[runin]
+{\bfseries\large}{}{0em}{}[---]
+
+
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\theauthor}
+
+\vspace{.25em}
+Iljo De Poorter. OOSD
+\end{center}
+}
+
+\begin{document}
+\title{OOSD, objecten}
+\author{Iljo De Poorter}
+\maketitle
+\section{Basic info/inleiding}
+Abstractie, In werkelijkheid is dit essentieel. 
+Niveau van deteail is nodig.
+\subsection{Objecten}
+Objecten zijn dingen die een bepaalde betekenis hebben.
+Deze kunnen we van elkaar onddeerscheiden, ze hebben ook eigenschappen en kunnen gebruikt worden.
+Zolang dat de code gecompileerd is maar niet aan het "runnen" worden de obkjecten niet aangemaakt; dat is enkel in runtime.
+\subsection{Klassen}
+De verschillende objecten met gelijkaardige eigenschappen worden gegroepeerd in een klasse. In databases is dit een entiteitstype.
+De beschrijvingen van deze dingen zijn belangerijk, Bv. Wat kan ik doen met een bordstift.
+\subsection{Horloges}
+Een lijst horloges wordt geabstracteerd naar gewoon polshorloges. Die dan wel eigenschappen hebben zoals kleur, matteriaal.
+1 object is de instantie van de klasse. 1 ding van de klasse wordt gedefinieerd. Synoniem voor object. Klasse Polshorloge(algemeene omschrijving), Die allemaal gemeenschappelijke eigenschappen hebben.
+
+\subsection{Klassen en objecten}
+Klassen zijn de blauwdrukken van objecten. Objecten zijn de instanties van klassen.
+\end{document}
+
