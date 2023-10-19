@@ -1,0 +1,105 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+
+
+\titleformat{\section}
+{\huge\bfseries\lowercase}{}{0em}{}[\titlerule]
+
+\titleformat{\subsection}
+{\bfseries\Large}{$\bullet$}{0em}{}
+
+\titleformat{\subsubsection}[runin]
+{\bfseries\large}{}{0em}{}[---]
+
+
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\theauthor}
+
+\vspace{.25em}
+i@iljo.dev --- https://iljo.dev --- https://github.com/iljo-dp
+Iljo De Poorter
+\end{center}
+}
+
+\begin{document}
+\title{Databases Les4}
+\author{Iljo De Poorter}
+
+\maketitle
+
+\subsection{Herhaling}
+EERD, enhanced entity relationship diagram
+ {Optional, AND} (Mandatory, AND) (Optional, OR) (Mandatory, OR)
+ Als een PARTENT zwak is, zijn de kinderen ook zwak.
+ \section{hoofdstul 5. Relationeel MODEL }
+ Veel op veel bestaat niet, en zullen we ook niet meer gebruiken.
+
+ Het relationeel model is een stappenplan dat we constant uit zullen voeren. 
+
+ \subsection{Defenities}
+ \subsubsection{Tupel}
+ Een georderde lijst van kenmerken, die een entiteit voorstelt. Een rij/record. Bv een beschrijving van een auto., rijen en kolommen. Georderde lijst met attribuutwaarden.
+ \subsubsection{Attribuut}
+ Een benoemd kenmerk, dat een eigenschap van een entiteit beschrijft. Een kolom. Bv een kleur van een auto. Inhoud van 1 cel
+ \subsubsection{Domein}
+ De toegestane waarden van een attribuut. Bv een kleur kan rood, blauw, groen, ... zijn.
+ \subsubsection{Datatype}
+ Elk atribuut is van een bepaald type, dit is afgeleid uit het domein. Bv een kleur is een string.
+ \subsubsection{Tupel verzameling}
+ Een verzameling van tupels, die dezelfde attributen hebben. Een tabel. Bv een verzameling van auto's. AKA een tabel.
+
+ Veel op Veel valt weg uit een ERD, maar is niet mogelijk in een relationele database.
+
+ Elke tupel is uniek
+ Elk attribuut is eenwaardig(maar 1 waarde)
+ Elke attribuut is atomair(kan niet worden gespitst)
+ Verbanden tussen relaties worden gelegd aan de hand van vreemde sleutels.
+
+ Een 1 op veel locatie staat de vreemde sleutel langs de veel kant.
+
+ \section{mapping}
+ \begin{itemize}
+\item Mappen is het omzetten van ERD naar relationeel.
+\item Elk entiteitstype wordt een tupelverzameling
+\item Enkelvoudige attribuuttypes overenmeen
+\item samengestelde attribuuttypes opslitsen. Naam --> voornaam famillienaam
+\item Maarwaardige attributen opsliptsen in meerdere attribuut types
+\item Primaire sleutels bepalden(kijk uit voor zwak)
+\item Voor elke relatie tussen entitettypen de vreemde sleutels bepalen.
+\item integriteitsregels bepalen voor elke sleuten.
+\end{itemize}
+
+\subsection{regels voor het bepalen van de vreemde sleutels}
+binair
+\begin{itemize}
+	\item 1 op veel relatie: vreemde sleutel aan de kant van de veel
+    	\item 1 op 1 relatie: als er een optionele kant is, zet hem daar
+	\item veel op veel relatie: Werk met een tussentabel(tertaire tabel)
+\end{itemize}
+Unair
+\begin{itemize}
+
+	\item 1 op veel
+	\item 1 op 1
+	\item veel op veel
+\end{itemize}
+\subsection{voorbeeld}
+Map een 1 op N binaire relatie
+stappen;
+
+Elke entiteit wordt een tabel. 
+Schrijf dan alle attribuuttypen op.
+Vreemde sleutel van een binaire relatie.
+
+Als je een unaire recursieve 1 op N relatie hebt zelf je opnieuw bij de relatie heeftAlsBaas, Baas als een entiteitstype toevoegen.
+
+1 op 1 (binair)
+Je wilt de vreemde sleutel zoveel mogelijk invullen. 
+Elke firmawagen heeft een personeelslid, maar niet elk personeelslid heeft een firmawagen.
+Dus we zetten bij firmawagen de vreemde sleutel van personeelslid, werkenemer, Want dit is altijd ingevuld.
+\end{document}
