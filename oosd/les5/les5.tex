@@ -1,5 +1,4 @@
 \documentclass{article}
-
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage[margin=1in]{geometry}
@@ -149,5 +148,19 @@ Deze word gebruikt om de structuur van een programma te beschrijven.
 
 We maken maar 1 diagram voor OOSD. 
 Elke klasse noemen we met een Hoofdletter, elk object is singelvoudig, dus steen ipv stenen.
+
+\subsection{get and set In UML}
+Public getter. (Hiervan zijn er enorm veel, door deze uit te tekenen in UML vervuilt dit het diagram.) <
+
+
+Public setter >	Als we een public setter toevoegen moeten we het er altijd opschriven, want dit is niet standaard.
+
+
+\subsubsection{Packages in JAVA vanaf NU}
+\begin{itemize}
+\item CUI, alles met interactie met de gebruiker. Scanner, Sysout, enz..
+\item domein. Alle domeinklassen, Hier komt alle logica. Hier mag GEEN main method. Geen scanner, geen Sysout.
+\item testen. Hier plaatsen we de test packages.
+\end{itemize}
 \end{document}
 
