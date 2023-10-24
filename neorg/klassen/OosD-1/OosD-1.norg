@@ -1,0 +1,127 @@
+#+TITLE=OOSD1
+* Week5
+** Refrence variable
+    - We hebben al gehoord van de heap en de stack
+    - In een heap zitten de methode's zoals berekenopp. Daar vind je de rechthoek r terug
+    - Een refrence variable(stack) zal de identiteit/locatie van een object bevatten. In de "doos" staat de locatie.
+    - Pointers?
+** Arrays uitleg
+    - Datastructuren om meerdere waarden van hetzelfde type op te slaan
+    - Lijsten van dingen opslaan
+    - Meerdere waarden van hetelfde type stockeren/opslaan
+    - Ofwel is alles van dezelfde klasse, Bv. boek-objecten, of dezelfde waaren van hetzelfde type, Bv. int
+***** voorbeeld
+      | 2 |
+      | 3 |
+      | 9 |
+*** Eendimensionele arrays
+     - start bij 0(dat is de index). Het 3de element is dus 2
+     - statisch
+     - zowel objecten als primitieve types
+     - Het laatste getal van de array is arr.length - 1
+     - Je kan ook de waarde van een element veranderen. Hierbij gebruiken we opnieuw de index.
+
+***** voorbeeld
+      @code java
+      getallen[2]; //Zo roepen we deze op // Dit returnd 9
+
+      getallen.length; //Dit returnd 3
+
+      getallen[3]; //Dit returnd een error, OOBD(out of bounds)
+
+      getallen[2] = 5; //Dit veranderd de waarde van 9 naar 5
+      @end
+**** Declaratie en creatie
+
+@code java
+int[] getallen = new int[3]; //Dit is de declaratie en creatie van een array
+@end
+
+     - int[] is de declaratie
+     - new int[3] is de creatie
+     - getallen is de naam van de array
+     - tussen de [] staat de grootte van de array
+     - Je kan ook in 1 lijntje meerdere arrays aanmaken.
+@code java
+double []a = new double[3], b = new double[5]; //Dit is de declaratie en creatie van 2 arrays
+@end
+     - De default waarde van een array is 0. En dit blijft zo tenzij veranderd
+
+     - Je kan ook een array maken meteen met waarden erin
+@code java
+int[] getallen = {2, 3, 9}; //Dit is de declaratie en creatie van een array meteen met waarden erin
+@end
+     -Hier maak je een nieuwe "doos" aan, waar er 3 vakjes zullen zijn.
+     -Deze vakjes zullen de waarden 2, 3 en 9 bevatten
+
+
+** Oefeningen 2.1
+***** Oefening 2.1.1
+      - Wat loopt er fout?
+@code java
+final int MAX = 3;
+int table[MAX] = {1,2,3};
+@end
+      - Dit is fout, je mag niet bij de int table[] de grootte van de array zetten.
+      - Laat deze gewoon weg.
+
+***** Oefening 2.1.2
+      - Wat loopt er fout?
+@code java
+int max = 5;
+int table1[] = new int[max];
+table1[max] = 5;
+max++;
+double table2[] = new int[max];
+@end
+      - Dit is fout, aangezien de index van een array altijd 1 kleiner is dan de grootte van de array.
+      - Je kan dit oplossen door de index te veranderen naar max - 1
+      - Op de laatste lijn maak je het aan als double, daarna wordt er verwijst naar als een int. Mag niet, datacasten werkt zo niet.
+
+***** Oefening 2.2.1
+      - Wat gebeurt er
+@code java
+int[]getallen=newint[10];
+getallen[9]=90;
+getallen[0]=100;
+getallen[1]=getallen[9-8];
+getallen[2]=getallen[0]*2;
+getallen[3]=getallen[2]+getallen[0];
+getallen[4]=getallen[9]*10;
+for(inti=5;i<=9;i++){
+	getallen[i]=i*2;
+}
+// Array getallen:
+// 0  1   2   3   4   5   6   7   8   9
+-----------------------------------------
+|   |   |   |   |   |   |   |   |   |   |
+-----------------------------------------
+@end
+     - we maken in de heap een array aan met 10 vakjes
+      - Eerst is deze overal 0, daarna vullen we deze in volgens de opdracht
+      - In de stack memory wordt er een referentie variabele aangemaakt, die verwijst naar de array in de heap
+
+***** Oefening 2.2.2
+      - Wat gebeurt er
+@code java
+int[]getallen1=newint[3];
+int[]getallen2=getallen1;
+getallen1[1]=100;
+getallen1=newint[3];
+getallen2[1]=500;
+// Array getallen1
+//0   1   2
+-------------
+|   |   |   |
+-------------
+// Array getallen2
+//0   1   2
+-------------
+|   |   |   |
+-------------
+@end
+      - In de stack maken we 2 verwijzingen naar de heap
+      - In de heap maken we eerst 1 array aan met 3 vakjes. Die we invullen met 0 100 0
+      - Naar die array wordt verwezen door beiden in de stack
+      - Daarna maken ew een tweede array in de heap aan met 3 vakjes. Die we invullen met 0 0 0.
+

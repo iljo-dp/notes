@@ -1,0 +1,73 @@
+* Algorithms
+** Begining
+*** O(n)
+    - Een manier om een algoritme's tijd of memory benodigdheden te meten. 
+    - Niet bedoeld als een exacte meeting, maar als een manier om te zien hoe een algoritme zich gedraagt als de input groeit.
+    - Als iemand je code O(n) noemt, dan betkened het dat het algoritme linair groeit op basis van de input.
+    - Waarom? Dit kan ons helpen beslisingen te maken over welke algoritme we moeten gebruiken. En de performantheid kan hierbij helpen.
+
+***** voorbeeld
+     - Zoals eerder gezegd, op basis van hoe de input groeit, hoe snel groeit de computionele kracht?
+@code java
+public int sum_char_codes(String n){
+	int sum = 0;
+	for(int i = 0; i < n.length(); i++){
+		sum += n.charAt(i);
+	}
+	return sum;
+}
+@end
+     - Als je naar de code kijkt, zie je dat we een string hebben genaamd N. Een String heeft een lengte en dus een serie van karakters daaraan verwand.
+     - De FOR loop is het deel wat dit O(n) maakt omdat het door de lengte van de string loopt. 
+     - Als onze String 50% kleiner is, zal het ook 50% sneller uitvoeren. Dit werkt ook langs de andere kant
+     - Elk 1 extra karakter in de string, zal het aantal keer dat de for loop rent verhogen met 1. Dit is Linair.
+     - Hoe O(n) zien? probeer te kijken naar loops.
+
+@code java
+public int sum_char_codes(String n){
+	int sum = 0;
+	for(int i = 0; i < n.length(); i++){
+		sum += n.charAt(i);
+	}
+
+	for(int i = 0; i < n.length(); i++){
+		sum += n.charAt(i);
+	}
+	return sum;
+}
+@end
+
+    - Als je hiernaar kijkt zou een logisch antwoord zijn, de functie van dit algoritme is O(2N)
+     - Maar dat is kompleet fout, het is nog steeds O(n). Waarom? Omdat het nog steeds linair groeit. Er staan gewoon 2 loops. 
+
+*** Bubble Sort
+    - Een van de meest simpele algoritmes om te begrijpen.
+    - Het is niet efficient, maar het is makkelijk te begrijpen.
+    - Om hieraan te beginnen krijgen we een lege funtie die een array als input heeft.
+**** Hoe pakken we dit aan?
+     - De eerste stap is het logisch nadenken hoe we de array zullen bewandelen met onze code.
+     - We berekenen altijd I met I+1
+     - En we werken altijd tot N-1
+     - We doen dit omdat we anders buiten de array zullen gaan.
+
+De implementatie van alles wat we nu al weten;
+@code java
+public int[] bubble_sort(int[] arr){
+	//Dit betekend dat we N keer de loop moeten doorlopen. 
+	for (int i = 0; i < arr.length; i++){
+	//Daarom hebben we een tweede loop nodig die dan zelf de berekeningen doet. En die gaat van j tot n-1-i. 
+		//want elke keer dat we de loop doen wordt het laatste cijfer gesorteerd. Dus die moeten we niet meerkenen.
+		for (int j = 0; j < arr.length - 1 - i; j++){
+			//Nu is het slechts een simpele vergelijking.				//Als I groter is dan J, switch ze van plek.		
+	                if (args[j].compareTo(args[j + 1]) > 0) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+	return arr;
+}
+@end
+     - Als je dit een input zou geven van c,a,b,d. Dan zal het dit sorteren als a,b,c,d.
+

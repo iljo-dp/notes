@@ -1,0 +1,23 @@
+#+OPTIONS: toc:nil
+* {:neorg/klassen/index:}[School stuff]
+
+ ** Semester 1
+    -  [OOSD1]{:neorg/klassen/index:* Oosd-1}
+    -  {:neorg/klassen/index:* Databases}
+  -  {:neorg/klassen/index:* IT-Fundamentals}
+  -  {:neorg/klassen/index:* Computer Systems}
+  -  {:neorg/klassen/index:* Web Development 1}
+  -  {:neorg/klassen/index:* Software-Analyse}
+     {https://cloud.timeedit.net/be_hogent/web/student/}[agenda]
+
+* Algorithms 1
+** notes
+   {:neorg/algorithms/day1:}
+
+* Cheatsheat
+** notes
+   {:neorg/cheatsheet:}
+
+* TODO
+** notes
+   {:neorg/todo:}

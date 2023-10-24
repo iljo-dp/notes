@@ -1,0 +1,112 @@
+#+TITLE: Overzicht vakken sem1
+#+AUTHOR: Iljo De Poorter
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+{https://cloud.timeedit.net/be_hogent/web/student/}[TimeEdit]
+* OosD-1
+** Properties
+   - Teacher: Fien Spriet
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
+   - Website: [Course Website]{https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=58975}
+   - Slides: {/ /home/iljo/dox/neorg/klassen/OosD-1/oef.pdf} [Oefeningen]
+
+
+** Schedule
+*** ( ) TODO OOSD-1 test
+    SCHEDULED: <2023-11-1 THU 8:00>
+       - Hfst 1-3
+** Homework
+*** (x) TODO Homework
+    SCHEDULED: <2023-10-24 Tue 10:00>
+	- Oef7 & 8
+*** Notes
+    {:OosD-1/OosD-1:}[Class Notes - OosD-1]
+
+* Databases
+** Properties
+   - Teacher:  Joeri Van Herreweghe
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/Databases/Cursus.pdf} [Cursus]
+   - Slides {/ /home/iljo/dox/neorg/klassen/Databases/slides.pdf} [Slides]
+   - Github: {https://github.com/HOGENT-Databases/DB1-Workshops}[Github)
+   - Site {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=58363}[Site]
+	
+** Schedule
+*** ( ) TODO Databases Test
+    SCHEDULED: <2023-11-08 Wed 08:00>
+	- Hfst 2-4(geen theorie)
+** Homework
+*** ( ) TODO Homework
+
+*** Notes
+    {:Databases/databases:}[Class Notes - Databases]
+
+
+* IT-Fundamentals
+** Properties
+   - Teacher: Mary Johnson
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/IT-Fundamentals/Cursus.pdf}[Boek]
+   - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=57640}[site]
+   - Video's {https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=57640&tool=LectureCapture}[Video's]
+   - Slides: {/ /home/iljo/dox/neorg/klassen/IT-Fundamentals/Slides.pdf}[Slides]
+
+** Schedule
+*** ( )TODO
+    SCHEDULED: <1970-01-01 Thu 00:00>
+** Homework
+*** ( )TODO Homework 
+
+*** Notes
+   {:IT-Fundamentals/IT-Fundamentals:}[Class Notes - IT-Fundamentals]
+
+
+* Computer Systems
+** Properties
+   - Teacher: Pieter De Bodt
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/Computer-Systems/Cursus.pdf}[Boek]
+   - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56958}[site]
+   - Additional: {https://lms.netacad.com/course/view.php?id=2142966}[Netacad]
+
+** Schedule
+*** ( )TODO
+    SCHEDULED: <1970-01-01 Thu 00:00>
+** Homework
+*** ( )TODO Homework 
+
+*** Notes
+    {:Computer-Systems/Computer-Systems:}[Class Notes - IT-Fundamentals]
+
+
+* Web Development 1
+** Properties
+   - Teacher:  	Lotte Van Steenberghe
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/Web-Development-1/Cursus.pdf}[Boek]
+   - Website: {https://web-development-i.github.io/overview/}[site]
+   - Github: {https://github.com/Web-Development-I}[Github]
+
+** Schedule
+*** ( ) TODO IT-Fundamentals Lecture
+    SCHEDULED: <1970-01-01 Thu 00:00>
+
+** Homework
+*** ( ) TODO Homework 
+
+*** Notes
+    {:Web-development-1/Web-Development-1:}[Class Notes - IT-Fundamentals]
+
+
+* Software-Analyse    
+** Properties
+   - Teacher: Fien Spriet
+   - Textbook: {/ /home/iljo/dox/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
+   - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56647}[site]
+   - Oefeningen: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56647&tool=LearningPath&tool_action=ComplexDisplay&publication=2215925&preview_content_object_id=4839204&learning_path_action=Viewer&child_id=143857}[Oefeningen]
+
+** Schedule
+*** ( ) TODO OOSD-1 Lecture
+    SCHEDULED: <1970-01-01 Thu 00:00>
+
+** Homework
+*** ( ) TODO Homework 1
+
+*** Notes
+    {:Software-Analysis/Software-Analysis:}[Class Notes - OosD-1]
