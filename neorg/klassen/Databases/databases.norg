@@ -1,0 +1,81 @@
+#+Title hoofdstuk 4 DATABANKEN
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+{/ /home/iljo/Downloads/Cursussen/DB/DB_H5_-_Relationeel_model_-_Mapping.pdf}[Cursus]
+{:/home/iljo/dox/hogent/neorg/klassen/index:* databases}
+{https://github.com/HOGENT-Databases/DB1-Workshops/blob/master/workshops/04-relationeel_model/exercises.md}
+* Mapping in databanken
+** Regels voor het mappen
+***** Stappenplan
+      - Elk entiteitstype wordt een tupelverzameling of tabel. 
+      - Enkelvoudige attribuuttypes overnemen
+      - Samengestelde attribuuttypes opsplitsen
+      - Meerwaardige attrubuten in apparte verzamelingen plaatsen
+      - Prim bepalen
+      - Voor elke zwakke entiteit de sleutel bepalen
+      - Integriteitsregel bepalen
+*** Mapping 1 op N binaire relatie
+    Personeelslid 1.1 ->--- 0.N Klant
+    - 1 op veel relatie
+    - Zet de sleutel van de 1 kant in de N kant. Personeelsnummer komt bij de klant.
+*** 1 op 1
+    Werknemer 1.1 ---- >--- 0.1 Auto
+    - Max cardinaliteit 1 langs elke kant. (rechts)
+    - Zet de vreemde sleutel(werknemer) bij de auto
+    - we zetten het langs de kant die optioneel is, want elke auto heeft een werknemer maar niet omgekeerd.
+*** 1 op 1 met optioneel langs beide kanten
+    Werknemer 0.1 ---- >--- 0.1 Auto
+    - Min cardinaliteit van 1
+    - Er zijn minder wagens dan werknemers.
+    - Zet de vreemde sleutel(werknemer) bij de auto.
+    - zo veel mogelijk invullen is altijd de regel.
+*** Veel op veel
+    	- Maak een nieuwe entiteit aan
+        - Een tertaire tabel
+    	- Een veel op Veel mag NOOIT.
+        - Maar 1 prim key per tabel
+    - 2 prim keys als vreemde sleutel doen. Dan onderstrepen want samen 1 key.
+        - AB(a1, b1,x). A 0.N ->--- 0.N B
+*** Zwak entiteit
+        - De U verwijst altijd naar iets met min cardinaliteit 1
+    	- We starten altijd langs de zwakke kant.
+        - De U wijst naar de prim key, niet de relatie(meestal)
+        - Welke tabel wordt gedifineerd op basis van de anderen?
+**** Mappng meerwaardige attrubuten
+     Boek(_ISBN_, titel, auteur, aaltalBlz) 
+     - --> Boek(_ibsn_, titel, aantalBlz) 0.N----0.N Auteur(auteurID, naam)
+*** specialisatie
+**** Mandatory and
+     - Dit regelen we door booleans te gebruiken als subtype attributen voor de super entiteit
+**** Optional and
+     - 2 tabellen: 1 voor het supertype, 1 voor de subtypes met booleans.
+     - Optional kan je bekomen door enkel owner in te vullen en te zwijgen over de rest.     - And, is dat er maar 1 van de booleans op ja te zetten.
+**** mandatory OR
+     - 1 aparte tabel per subtype
+     - Geen andere owners dan private of business creeren hier.
+     - or; vor beide soorten is er een apparte tabel
+**** Optional OR
+     - Tabel voor elk type, zowel voor supertype als elk subtype.
+     - De subtypes verwijzen naar het supertype.
+*** Strucuur beperking
+    - Enkel relaties met 0 of 1
+    - Veel op veel verbanden opslitsen in twee 1 op veel
+    - 1 op 1 verbanden opslitsen in twee 1 op veel
+** Oefening notities
+*** Stappenplan + uitleg zelve
+    - Elk entiteitstype wordt een tupelverzameling of tabel.
+      Dus van een tabel naar Naam(attributen) gaan.
+
+    - Enkelvoudige attribuuttypes overnemen
+	
+    - Samengestelde attribuuttypes opsplitsen
+
+    - Meerwaardige attrubuten in apparte verzamelingen plaatsen
+
+    - Prim bepalen
+
+    - Voor elke relatie tussen entiteitstypen de sleutel bepalen
+
+    - Integriteitsregel bepalen
+      De relatie tussen de tabbelen gewoon uitschrijven.
+    	

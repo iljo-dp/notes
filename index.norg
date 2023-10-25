@@ -2,12 +2,12 @@
 * {:neorg/klassen/index:}[School stuff]
 
  ** Semester 1
-    -  [OOSD1]{:neorg/klassen/index:* Oosd-1}
-    -  {:neorg/klassen/index:* Databases}
-  -  {:neorg/klassen/index:* IT-Fundamentals}
-  -  {:neorg/klassen/index:* Computer Systems}
-  -  {:neorg/klassen/index:* Web Development 1}
-  -  {:neorg/klassen/index:* Software-Analyse}
+    - {:neorg/klassen/index:* Oosd-1}[OOSD1]
+    - {:neorg/klassen/index:* Databases}[Databases]
+    - {:neorg/klassen/index:* IT-Fundamentals}[IT-Fundamentals]
+    - {:neorg/klassen/index:* Computer Systems}[Computer Systems]
+    - {:neorg/klassen/index:* Web Development 1}[Web Development 1]
+    - {:neorg/klassen/index:* Software-Analyse}[Software-Analyse]
      {https://cloud.timeedit.net/be_hogent/web/student/}[agenda]
 
 * Algorithms 1

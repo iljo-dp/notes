@@ -1,0 +1,63 @@
+{:/home/iljo/dox/hogent/neorg/klassen/index:}
+* Systems
+** Gebruikers en groepen aanmaken
+**** Groepen
+     - we maken groepen aan, om zo rechten en inforatie te scheiden van elkaar
+     - groepen zijn een verzameling van gebruikers
+**** groepen aanmaken
+@code bash
+sudo groupadd dev
+grep dev /etc/group
+@end 
+     - We gebruiken de -g flag om groepen aan te maken met een eigen GID. Zo kunnen we zelf overzicht behouden
+     **** Groupmod
+@code bash
+sudo groupmod -g 1000 dev
+groupmod -n clerks sales
+@end
+	  - We kunnen ook de naam van een groep aanpassen met groupmod
+	  - We kunnen ook groepen verwijderen
+@code bash
+groupdel clerks
+@end
+*** Users
+    - met het commando useradd kan je als root nieuwe users aanmaken
+    - Met de optie -D kan je de default waarden van useradd aanpassen
+    - Met de optie -m kan je een home directory aanmaken
+**** GebruikersID
+     - Elke gebruiker heeft een uniek ID
+     - ID start bij 1000 voor normale users, en is 0 voor root.
+@code bash
+useradd -u 1001 -m -d /home/developer -s /bin/bash developer
+@end
+*** Permissies
+    - Permissies zijn rechten die je kan toekennen aan bestanden en mappen
+    - Permissies zijn opgedeeld in 3 groepen
+@code bash
+ls -l
+.rw-r--r--   444 iljo 14 Oct 17:39   token
+drwxr-xr-x     - iljo 14 Oct 17:33   usb
+
+@end
+**** Groepen/permissies
+     - Aan het eerste karakter kan je zien welk type bestand het is
+     - Een - betekent een gewoon bestand
+     - Een d betekent een directory
+     - Een | betekent een link
+**** Permissies
+     - De eerste 3 karakters zijn de permissies voor de eigenaar
+     - De volgende 3 karakters zijn de permissies voor de groep
+     - De laatste 3 karakters zijn de permissies voor de anderen
+     - r = read(4)
+     - w = write(2)
+     - x = execute(1)
+     - Deze getallen tellen we dan op om zo de permissies te bepalen
+     - 7 = rwx
+     - 6 = rw-
+     - 5 = r-x
+     - 4 = r--
+     - 3 = -wx
+     - 2 = -w-
+     - 1 = --x
+     - 0 = ---
+

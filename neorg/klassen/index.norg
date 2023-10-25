@@ -6,9 +6,9 @@
 * OosD-1
 ** Properties
    - Teacher: Fien Spriet
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
    - Website: [Course Website]{https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=58975}
-   - Slides: {/ /home/iljo/dox/neorg/klassen/OosD-1/oef.pdf} [Oefeningen]
+   - Slides: {/ /home/iljo/dox/hogent/neorg/klassen/OosD-1/oef.pdf} [Oefeningen]
 
 
 ** Schedule
@@ -25,9 +25,9 @@
 * Databases
 ** Properties
    - Teacher:  Joeri Van Herreweghe
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/Databases/Cursus.pdf} [Cursus]
-   - Slides {/ /home/iljo/dox/neorg/klassen/Databases/slides.pdf} [Slides]
-   - Github: {https://github.com/HOGENT-Databases/DB1-Workshops}[Github)
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/Databases/Cursus.pdf} [Cursus]
+   - Slides {/ /home/iljo/dox/hogent/neorg/klassen/Databases/slides.pdf} [Slides]
+   - Github: {https://github.com/HOGENT-Databases/DB1-Workshops} [Github]
    - Site {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=58363}[Site]
 	
 ** Schedule
@@ -44,10 +44,10 @@
 * IT-Fundamentals
 ** Properties
    - Teacher: Mary Johnson
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/IT-Fundamentals/Cursus.pdf}[Boek]
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/IT-Fundamentals/Cursus.pdf}[Boek]
    - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=57640}[site]
    - Video's {https://chamilo.hogent.be/index.php?go=CourseViewer&application=Chamilo%5CApplication%5CWeblcms&course=57640&tool=LectureCapture}[Video's]
-   - Slides: {/ /home/iljo/dox/neorg/klassen/IT-Fundamentals/Slides.pdf}[Slides]
+   - Slides: {/ /home/iljo/dox/hogent/neorg/klassen/IT-Fundamentals/Slides.pdf}[Slides]
 
 ** Schedule
 *** ( )TODO
@@ -62,7 +62,7 @@
 * Computer Systems
 ** Properties
    - Teacher: Pieter De Bodt
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/Computer-Systems/Cursus.pdf}[Boek]
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/Computer-Systems/Cursus.pdf}[Boek]
    - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56958}[site]
    - Additional: {https://lms.netacad.com/course/view.php?id=2142966}[Netacad]
 
@@ -79,7 +79,7 @@
 * Web Development 1
 ** Properties
    - Teacher:  	Lotte Van Steenberghe
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/Web-Development-1/Cursus.pdf}[Boek]
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/Web-Development-1/Cursus.pdf}[Boek]
    - Website: {https://web-development-i.github.io/overview/}[site]
    - Github: {https://github.com/Web-Development-I}[Github]
 
@@ -97,7 +97,7 @@
 * Software-Analyse    
 ** Properties
    - Teacher: Fien Spriet
-   - Textbook: {/ /home/iljo/dox/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
+   - Textbook: {/ /home/iljo/dox/hogent/neorg/klassen/OosD-1/boek-4.pdf} [Boek]
    - Website: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56647}[site]
    - Oefeningen: {https://chamilo.hogent.be/index.php?application=Chamilo%5CApplication%5CWeblcms&go=CourseViewer&course=56647&tool=LearningPath&tool_action=ComplexDisplay&publication=2215925&preview_content_object_id=4839204&learning_path_action=Viewer&child_id=143857}[Oefeningen]
 
