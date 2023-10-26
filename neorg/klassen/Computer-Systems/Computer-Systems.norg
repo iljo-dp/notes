@@ -60,4 +60,5 @@ drwxr-xr-x     - iljo 14 Oct 17:33   usb
      - 2 = -w-
      - 1 = --x
      - 0 = ---
+     - Deze rechten werken in een octaal systeem btw.
 

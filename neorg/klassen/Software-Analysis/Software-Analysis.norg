@@ -1,0 +1,80 @@
+* Software-analyse
+* System sequence diagram
+   - Een SSD is een sequentiediragram dat alle interacties tussen actor en het systeem van 1 use case weergeeft.
+   - Het geeft all einteractie weer tussen de klant en het systeem. (1 use case per keer)
+** Wat leren we?
+   - Geeft inzicht in de systeemeisen die de enduser nodig heeft
+   - Toont de boodschappen/opperaties = systeemgedrag
+   - Toont wat het systeem moet doen(niet hoe)
+** Onderdelen
+   - Deelnemer
+   - Levenslijn(wanner is de persoon/systeem actief)
+   - Systeemoperatie(pijlen)
+   - Antwoord op de opperatie
+   - Herhaling
+   - externe use cases.
+** Levenslijn 
+  - 1 lijn per deelnemer 
+  - 1 stippellijn met blokken als actief
+  - User is altijd acitef(een blauw blok)
+** Systeem operatie
+  - Boodschap met een pijnle -> systeem
+    ---> volle pijl
+  - werkwoord in gebiedende wij + () met parameters
+  - - Naamgeving is zeer belangerijk. bestel() ipv drukBestelKnop()
+  *** Antwoord op de operatie
+     - Boodschap met een pijl -> actor
+     - Van het blokje op de lvenslijn systeem naar bloik actor
+     - Benoem enkel wat het systeem teruggeeft
+     - Geen operaties, datatypes, zelfstandige naamwoorden.
+     - Meldingen zijn geen antwoorden
+** Herhaling
+   - Kader rond operatie en antwoordne die herhaald worden.
+   - We schrijven niet als programmeren welke soort lus enz. Maar gewoon waneer er gestopt moet worden.
+   - met een "loop" en codititie
+
+** Externe use cases
+   - op UC, onderlijnd
+   - kader "REF" met daarin de naam van de use case
+* Stappenplan voor SSD
+  - Kies een use case scenario
+  - voeg elke deelnemer toe met de levenslijn
+  - Systeemoperaties toe
+  - herhalingen toevoegen
+** Stap 1
+   - Kies een use case scenario
+   - Normaal verloop OF
+   - Normaal verloop met integratie stappen van 1 alt verloop
+   - Zorg voor passende naam ssd.
+** Stap 2
+   - Voeg elke deelnemer toe met de levenslijn
+   - 1 lijn per deelnemer
+   - 1 stippellijn met blokken als actief
+   - User is altijd actief
+** Stap 3
+   - Systeemoperaties toevoegen
+   - Boodschap met een pijl -> systeem
+   - werkwoord in gebiedende wij + () met parameters
+   - Naamgeving is zeer belangerijk. bestel() ipv drukBestelKnop()
+   - Alles wat de actor uitvoer is een systeemboodhschap.
+   - Werk met activatieblokjes.
+** Stap 4
+   - Herhalingen toevoegen
+   - Kader rond operatie en antwoordne die herhaald worden.
+   - We schrijven niet als programmeren welke soort lus enz. Maar gewoon waneer er gestopt moet worden.
+   - Als we zien dat ze in het verloop vragen naar iets zoals; "Zolang x niet is bereikt keer terug naar stap 4"
+   - Dan is het herhaling.
+
+* Operation Contract
+** Nut van het OC
+   - OC hoort bij een systeemopdracht
+   - Het OC is onderdeel van de analyse
+   - Het is een document die beschrijft wat een operatie moet bereiken
+   - Beschrijft de veranderingen/gevolgen in het systeem op basis vna de operatie.
+   - ENKEL VOOR SYSTEMOPERATIES DIE IETS WIJZIGEN
+** Hoe een opstelen?
+   - contract = naam/omschrijving van het OC.
+   - Operatie = naam van het systeem operatie uit het ssd.
+   - Cross refrence, naam van de betrokken use cases.
+   - Preconditie= Beschrijft het systeem voor de uitvoeringe vna de opperatie.
+   - Postconditie; degetailleerde beschrijving van de objecten die gewijzigd zijn door de systeemoperatie.
